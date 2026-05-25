@@ -1,0 +1,138 @@
+body {
+
+  margin: 0;
+  font-family: Arial;
+  background: #0f172a;
+  color: white;
+
+}
+
+.contenedor {
+
+  max-width: 700px;
+  margin: auto;
+  padding: 30px;
+
+}
+
+h1 {
+
+  text-align: center;
+
+}
+
+.contador {
+
+  text-align: center;
+  margin-bottom: 20px;
+  opacity: 0.8;
+
+}
+
+.input-container {
+
+  display: flex;
+  gap: 10px;
+
+}
+
+input {
+
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+
+}
+
+.busqueda {
+
+  width: 100%;
+  margin-bottom: 20px;
+
+}
+
+button {
+
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+
+}
+
+ul {
+
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+
+}
+
+li {
+
+  background: #1e293b;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  transition: 0.3s;
+
+}
+
+li:hover {
+
+  transform: scale(1.02);
+
+}
+
+.completada span {
+
+  text-decoration: line-through;
+  opacity: 0.5;
+
+}
+
+.alta {
+
+  border-left: 6px solid red;
+
+}
+
+.mensaje {
+
+  text-align: center;
+  margin-top: 15px;
+  color: #38bdf8;
+
+}
+
+.sugerencias {
+
+  background: white;
+  color: black;
+  border-radius: 10px;
+  margin-top: 5px;
+  overflow: hidden;
+
+}
+
+.sugerencias p {
+
+  margin: 0;
+  padding: 10px;
+  cursor: pointer;
+
+}
+
+.sugerencias p:hover {
+
+  background: #ddd;
+
+}
