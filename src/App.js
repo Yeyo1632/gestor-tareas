@@ -186,9 +186,13 @@ function App() {
 
       <h1>📋 Gestor de Tareas</h1>
 
-      <p className="contador">
-        Total de tareas: {lista.length}
-      </p>
+<p className="fecha">
+  📅 Fecha: {new Date().toLocaleDateString()}
+</p>
+
+<p className="contador">
+  Total de tareas: {lista.length}
+</p>
 
       {/* Buscador */}
       <input
