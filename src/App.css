@@ -136,3 +136,8 @@ li:hover {
   background: #ddd;
 
 }
+.estadisticas {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 5px 0;
+}

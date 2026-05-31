@@ -179,6 +179,13 @@ function App() {
       busqueda.toLowerCase()
     )
   );
+  // Estadísticas
+const tareasCompletadas = lista.filter(
+  (t) => t.completada
+).length;
+
+const tareasPendientes =
+  lista.length - tareasCompletadas;
 
   return (
 
@@ -191,7 +198,15 @@ function App() {
 </p>
 
 <p className="contador">
-  Total de tareas: {lista.length}
+  📋 Total de tareas: {lista.length}
+</p>
+
+<p className="estadisticas">
+  ✅ Completadas: {tareasCompletadas}
+</p>
+
+<p className="estadisticas">
+  ⏳ Pendientes: {tareasPendientes}
 </p>
 
       {/* Buscador */}
