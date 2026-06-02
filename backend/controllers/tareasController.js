@@ -31,6 +31,13 @@ const crearTarea = async (req, res) => {
 
         const tareaGuardada = await nuevaTarea.save();
 
+        // Enviar notificación en tiempo real
+        const io = req.app.get("io");
+
+        io.emit("nuevaTarea", {
+            mensaje: `Nueva tarea agregada: ${tareaGuardada.texto}`
+        });
+
         res.status(201).json(tareaGuardada);
 
     } catch (error) {
@@ -48,7 +55,9 @@ const eliminarTarea = async (req, res) => {
 
     try {
 
-        await Tarea.findByIdAndDelete(req.params.id);
+        await Tarea.findByIdAndDelete(
+            req.params.id
+        );
 
         res.json({
             mensaje: "Tarea eliminada"
@@ -63,7 +72,6 @@ const eliminarTarea = async (req, res) => {
     }
 
 };
-
 // Completar tarea
 const completarTarea = async (req, res) => {
 

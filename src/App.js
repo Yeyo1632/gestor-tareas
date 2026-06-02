@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
+import { io } from "socket.io-client";
+const socket = io("http://localhost:5000", {
+  transports: ["websocket", "polling"]
+});
 
 function App() {
 
@@ -65,6 +69,36 @@ function App() {
     }
 
   }, [tarea]);
+
+  useEffect(() => {
+
+  socket.on("nuevaTarea", (data) => {
+
+    setMensaje(`🔔 ${data.mensaje}`);
+
+    setTimeout(() => {
+      setMensaje("");
+    }, 3000);
+
+  });
+
+  return () => {
+    socket.off("nuevaTarea");
+  };
+
+}, []);
+
+useEffect(() => {
+
+  socket.on("connect", () => {
+    console.log("🟢 Socket conectado");
+  });
+
+  socket.on("connect_error", (err) => {
+    console.log("❌ Error Socket:", err.message);
+  });
+
+}, []);
 
   // Agregar tarea
   const agregarTarea = async () => {
